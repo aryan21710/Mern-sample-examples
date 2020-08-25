@@ -1,7 +1,6 @@
 {
   "name": "Playground",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +13,14 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "util": "^0.12.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryan21710/Mern-sample-examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aryan21710/Mern-sample-examples/issues"
+  },
+  "homepage": "https://github.com/aryan21710/Mern-sample-examples#readme",
+  "description": ""
 }
