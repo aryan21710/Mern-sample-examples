@@ -67,18 +67,22 @@ const input = {
   },
 };
 
+let output = {
+  height: Object.keys(input)
+    .filter((_) => _ === "My Cases")
+    .map((_) => input[_].childLinkWrapper.height)
+    .pop(),
+};
 
-let output={height:Object.keys(input).filter((_)=>_==="My Cases").map((_)=>input[_].childLinkWrapper.height).pop()}
-
-console.log(`output ${JSON.stringify(output,null,4)}`)
+console.log(`output ${JSON.stringify(output, null, 4)}`);
 
 for (let i in input) {
-    if (i==="My Cases") {
-        input[i].childLinkWrapper.height="10vh"
-        /* this.setState({
+  if (i === "My Cases") {
+    input[i].childLinkWrapper.height = "10vh";
+    /* this.setState({
             input: {...input,...input[i]}
         })*/
-    }
+  }
 }
 
-console.log(`input ${JSON.stringify(input,null,4)}`)
+console.log(`input ${JSON.stringify(input, null, 4)}`);
