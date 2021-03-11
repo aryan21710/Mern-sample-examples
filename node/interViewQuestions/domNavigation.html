@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title></title>
+		<style>
+			.wrapper {
+				border: 2px solid red;
+				width: 20vw;
+				height: 20vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.wrapper > JAMES {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				border: 2px solid red;
+				width: 15vw;
+				height: 15vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<JAMES>
+				<Dave><p>DAVE</p></Dave>
+				<Mike>MIKE</Mike>
+				<Sarah>SARAH</Sarah>
+			</JAMES>
+		</div>
+		<script>
+			function closestRelative(parent, relativeName) {
+				const nodeForRelativeName = document.getElementsByTagName(relativeName)[0];
+				if (nodeForRelativeName) {
+					const parentName = nodeForRelativeName.parentNode.nodeName;
+					if (parent.nodeName === parentName) {
+						console.log(`nodeForRelativeName ${nodeForRelativeName.nodeName}`);
+						return nodeForRelativeName.nodeName;
+					}
+				}
+				return null;
+			}
+
+			let parent = document.getElementsByTagName('JAMES')[0];
+			console.log('FINAL OUTPUT', closestRelative(parent, 'Dave'));
+		</script>
+	</body>
+</html>

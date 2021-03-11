@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<p data-topic-name="discussion">General discussion</p>
+			<p data-topic-name="bugs">Bugs</p>
+			<p data-topic-name="animals">Animals</p>
+		</div>
+		<script>
+			function newMessage(topicName) {
+				const pNodes = document.querySelectorAll('p');
+				Array.from(pNodes).forEach((node) => {
+					if (node.dataset.topicName === topicName) {
+						node.style.backgroundColor = 'red';
+					}
+				});
+			}
+			newMessage('animals');
+		</script>
+	</body>
+</html>

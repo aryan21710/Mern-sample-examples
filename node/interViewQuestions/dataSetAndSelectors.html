@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="description" content="Web site created using create-react-app" />
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<title>React App</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="image">
+				<ul data-continent="North America">
+					<li data-species="California condor">Critically Endangered</li>
+					<li data-species="Cave bear">Near Threatened</li>
+				</ul>
+				<ul data-continent="Europe">
+					<li data-species="Cave bear">Extinct</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+            /* https://www.testdome.com/d/javascript-interview-questions/2 */
+			function endangeredSpecies(continent, species) {
+				const ulNodes = document.querySelectorAll('ul');
+				for (let i = 0; i <= ulNodes.length - 1; i++) {
+					if (ulNodes[i].dataset.continent === continent) {
+						const liNodes = ulNodes[i].children;
+						for (let j = 0; j <= ulNodes.length - 1; j++) {
+							if (liNodes[j].dataset.species === species) {
+								return liNodes[j].innerHTML;
+							}
+						}
+					}
+				}
+			}
+			console.log(endangeredSpecies('Europe', 'Cave bear'));
+		</script>
+	</body>
+</html>

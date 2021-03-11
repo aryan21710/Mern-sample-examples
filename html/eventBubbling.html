@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+    .parent {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        float: left;
+
+    }
+
+
+
+    .parent li:nth-child(2) {
+        color: red;
+    }
+
+
+
+    ul {
+        border: 2px solid red;
+        overflow: auto;
+        padding: 2vh 2vw;
+    }
+</style>
+    <body>
+        <div class="parent">
+            <ul>
+                <li class="li1">ONE</li>
+                <li class="li2">TWO</li>
+                <li class="li3" onclick="event.stopPropagation()">THREE</li>
+            </ul>
+        </div>
+    </body>
+
+    <script>
+            // document.querySelectorAll('li').forEach((elem)=>{
+            //     elem.addEventListener('click', function(e) {
+            //     alert(e.target.innerText)
+            // })
+            // })
+
+            document.querySelector('.parent').addEventListener('click', function(e) {
+                alert(e.target.innerText)
+            })
+        </script>
+</html>

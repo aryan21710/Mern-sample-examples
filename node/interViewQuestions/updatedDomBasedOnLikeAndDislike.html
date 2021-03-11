@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<title></title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<ul>
+				<li>
+					1
+					<button>Up!</button>
+					Taco
+					<button>Down!</button>
+				</li>
+				<li>
+					2
+					<button>Up!</button>
+					Pizza
+					<button>Down!</button>
+				</li>
+				<li>3 <button>Up!</button>Eggs<button>Down!</button></li>
+			</ul>
+		</div>
+		<script>
+			const setUp = () => {
+				const buttonNode = document.querySelectorAll('button');
+				const olNode = document.querySelector('ul');
+				const btnNodeArray = Array.from(buttonNode);
+				btnNodeArray.forEach((btnNode, idx) => {
+					btnNode.addEventListener('click', function () {
+						if (this.innerHTML === 'Up!') {
+							if (this.parentNode.previousElementSibling)
+								olNode.insertBefore(this.parentNode, this.parentNode.previousElementSibling);
+						} else if (this.innerHTML === 'Down!') {
+							if (this.parentNode.nextElementSibling)
+								olNode.insertBefore(this.parentNode.nextElementSibling, this.parentNode);
+						}
+					});
+				});
+			};
+			setUp();
+		</script>
+	</body>
+</html>

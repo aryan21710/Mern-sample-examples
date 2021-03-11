@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        /* HOW T DRAW A TRAINGLE USING HTML AND PLAIN CSS*/
+    .parent {
+        /* 1] FIRST DRAW A SQUARE WITH A BORDER AS FOLLOWS
+        width: 50px;
+        height: 50px;
+        border: 10px solid red;
+        2] NOW DELETE THE HEIGHT PROPERTY;
+        3] CHANGE THE WIDTH TO 0PX;
+        4] CONVERT THE border:- 10px solid red to following colors 
+        to distinguish between different traingles.
+
+        border-bottom: 50px solid blue; 
+        border-top: 50px solid pink;
+        border-left: 50px solid yellow;
+        border-right: 50px solid green;
+        */
+        width: 0px;
+        /* BELOW BORDER MAKES 4 TRAINGLE. 
+        YOU CAN MAKE THE COLOR TO BE TRANSPARENT FOR 3 TO DISPLAY ONLY
+        ONE TRIANGLE OF YOUR CHOICE */
+        border-bottom: 50px solid transparent; 
+        border-top: 50px solid pink;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+    }
+
+</style>
+    <body>
+        <div class="parent">
+        </div>
+    </body>
+
+
+</html>

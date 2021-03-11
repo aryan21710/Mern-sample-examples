@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<ul id="customers"></ul>
+		</div>
+		<script>
+			// CURRIED VERSION OF CREATENODE
+			const createNode = (nodename) => (liNode) => (nodeValue) => {
+				const pNode = document.createElement(nodename);
+				const textNode = nodeValue.match(/@/g)
+					? document.createTextNode(nodeValue)
+					: document.createTextNode(nodeValue + ' (Click On Me)');
+				pNode.appendChild(textNode);
+				liNode.appendChild(pNode);
+				return pNode;
+			};
+			const showCustomers = (customers, targetList) => {
+				customers.forEach((obj, idx) => {
+					let liNode = document.createElement('li');
+					const pNode = createNode('p')(liNode)(obj.name);
+					pNode.addEventListener('click', function () {
+						!this.nextSibling ? createNode('p')(liNode)(obj.email) : this.nextSibling.remove();
+					});
+					targetList.appendChild(liNode);
+				});
+			};
+
+			let customers = [
+				{
+					name: 'John',
+					email: 'john@example.com',
+				},
+				{
+					name: 'Mary',
+					email: 'mary@example.com',
+				},
+			];
+			showCustomers(customers, document.getElementById('customers'));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <style>
+        .moveMouse {
+            width: 50vw;
+            height: 50vh;
+            border: 2px solid red;
+            font-size: 30px;
+            color: black;
+        }
+    </style>
+
+
+    <title>React App</title>
+  </head>
+  <body>
+      <div class="moveMouse" onmousemove="funcMouseMoveEvent(event)">
+
+      </div>
+    <script>
+
+        const funcMouseMoveEvent=(event)=>{
+            document.getElementsByClassName('moveMouse').innerHTML="HI";
+
+            const times=1;
+            let wait=false;
+            if (!wait) {
+                wait = true;
+                const myElem=document.getElementsByClassName('moveMouse');
+                const mousePos={
+                x:event.pageX,
+            y:event.pageY
+            }
+            console.log(`mousePos ${JSON.stringify(mousePos)}`)
+
+                setTimeout(()=>{
+               
+            wait=false;
+
+            },5000/times)
+            }
+
+          
+   
+         
+
+
+            
+        }
+
+
+
+        
+
+    </script>
+ 
+</html>
